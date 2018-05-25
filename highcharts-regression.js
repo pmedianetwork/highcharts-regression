@@ -105,16 +105,6 @@
 
     });
 
-    H.wrap(H.Chart.prototype, 'addSeries', function (proceed) {
-        var s = arguments[1];
-        var extraSerie = processSerie(s, 'addSeries', this);
-        arguments[1].rendered = true;
-        if (extraSerie) {
-            this.addSeries(extraSerie);
-        }
-        proceed.apply(this, Array.prototype.slice.call(arguments, 1));
-    });
-
 
     /**
      * Code extracted from https://github.com/Tom-Alexander/regression-js/
